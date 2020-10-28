@@ -1,0 +1,27 @@
+<div class="container" >
+   
+    <div class="col-md-8 col-md-offset-2">
+       
+        <div class="panel panel-primary">
+        <div class="panel panel-heading">Demandes</div>
+        <div class="panel panel-body">
+            <table class="table table-striped" *ngIf="demandes">
+    <thead class="thead-dark">
+        <tr>
+          <th>NumDemande</th><th>Date</th><th>Service</th><th>Image</th>
+            </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let d of demandes |async">
+        <td>{{d.id}}</td>
+        <td>{{d.date |date}}</td>
+        <td>{{d.service}}</td>
+        <img height="100px" src="{{this.demandeService.baseUrl+'/photoDemande/'+d.id}}"
+        alt="{{d.objet}}">
+    </tr>
+    </tbody>
+            </table>
+        </div>
+    </div> 
+    </div>  
+    </div>
